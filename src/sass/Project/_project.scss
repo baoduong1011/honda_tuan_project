@@ -1,0 +1,112 @@
+.projects {
+
+    background: $black;
+
+    .heading {
+        color: $white;
+    }
+    
+    #box-container  {
+        @include grid(40rem);
+        .box {
+            cursor: initial;
+            
+            &:hover .image img {
+                transform: scale(1.1);
+            }
+
+            .image {
+                height: 40rem;
+                overflow: hidden;
+
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    transition: all 0.5s;
+                }
+            }
+
+            .content {
+                display: flex;
+                gap: 0.5rem;
+                background: $white;
+                justify-content: space-between;
+
+                .info {
+                    padding:1rem 2rem;
+
+                    h3 {
+                        @include titleText(1.7rem);
+                    }
+
+                    p {
+                        @include graphText(1.5rem);
+                    }
+                }
+
+                i {
+                    width: 7.5rem;
+                    font-size: 3rem;
+                    background: $yellow;
+                    color: $white;
+                    cursor: pointer;
+                    text-align: center;
+                    line-height: 7.5rem;
+                }
+            }
+        }
+    }
+}
+
+.reviews {
+    
+    .slide {
+        border: $border;
+        border-radius: 15px;
+        p {
+            padding: 1.5rem;
+            background: $light-bg;
+            position: relative;
+            margin-bottom: 3rem;
+            border-radius: 15px;
+            @include graphText(1.5rem);
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: -1rem;
+                left: 2rem;
+                height: 2rem;
+                width: 2rem;
+                background: $light-bg;
+                transform: rotate(45deg);
+            }
+        }
+
+        .user {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            
+            img {
+                height: 7rem;
+                width: 7rem;
+            }
+
+            h3 {
+                @include titleText(1.7rem);
+            }
+
+            .stars {
+                padding-top: 0.5rem;
+                i {
+                    font-size: 1.4rem;
+                    color: $yellow;
+                }
+            }
+        }
+    }
+    .swiper-pagination {
+        display: none;
+    }
+}
